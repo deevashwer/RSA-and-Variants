@@ -1,2 +1,3 @@
 # RSA
-Implementation of homomorphic (unpadded) RSA using GNU MP library in C++.
+Implementation of textbook (unpadded) RSA using GNU MP library in C++.
+The implementation supports homomorphic multiplication.
