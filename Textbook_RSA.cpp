@@ -56,7 +56,9 @@ public:
         mpz_inits(pk.n, pk.e, sk, p, q, phi_n, temp, NULL);
         mpz_set_ui(pk.e, value_e);
         find_prime(p, key_length/2);
-        find_prime(q, key_length/2);
+        do{
+            find_prime(q, key_length/2);
+        }while(mpz_cmp(p, q) == 0);
         mpz_mul(pk.n, p, q);
         mpz_sub(temp, p, one);
         mpz_set(phi_n, temp);
@@ -126,11 +128,11 @@ int main() {
     mpz_set_ui(two, 2);
     cryptosystem pkc;
     /*mpz_t pt;
-    mpz_init(pt);
-    mpz_set_ui(pt, 534);*/
+     mpz_init(pt);
+     mpz_set_ui(pt, 534);*/
     ciphertext result(one, &pkc);
-    ciphertext ct[100];
-    for(int i = 0; i < 100; i++){
+    ciphertext ct[10];
+    for(int i = 0; i < 10; i++){
         ct[i].initialize(two, &pkc);
         result = result * ct[i];
         cout << i << " ";
