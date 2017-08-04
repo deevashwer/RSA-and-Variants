@@ -1,4 +1,3 @@
 # RSA
-Implementation of Fully Homomorphic (unpadded) RSA and Probabilistic RSA using GNU MP library in C++.
-The deterministic implementation supports mod p homomorphic addition and multiplication.
+Implementation of (unpadded) Textbook RSA and Probabilistic RSA using GNU MP library in C++.
 The probabilistic implementation supports homomorphic multiplication.
